@@ -14,6 +14,8 @@ public class Main {
             q = scanner.nextLine();
         }
             q = calc(q);
+
+
 }
 
     static int poiskznaka(String Txt, int n, char symbol, int j) {
@@ -44,27 +46,8 @@ public class Main {
         return num3;
     }
 
-    static double keynumberd(int k, double num1, double num2, double num3) {
-        switch (k) {
-            case 1:
-                num3 = num1 + num2;
-                break;
-            case 2:
-                num3 = num1 - num2;
-                break;
-            case 3:
-                num3 = num1 * num2;
-                break;
-            case 4:
-                num3 = num1 / num2;
-                break;
-        }
-        return num3;
-    }
 
-    //public static String calc
-
-    public static String arabcalc(String q, double num3, int k, int n) {
+    public static String arabcalc(String q, int num3, int k, int n) {
         int m = 0;
         while ((q.charAt(m) != '+') && (q.charAt(m) != '-') && (q.charAt(m) != '/') && (q.charAt(m) != '*')) {
             m++;
@@ -72,11 +55,9 @@ public class Main {
 
         int num1 = Integer.parseInt(q.substring(0, m));
         int num2 = Integer.parseInt(q.substring(m + 1, n));
-        double num11 = (double) num1;
-        double num21 = (double) num2;
 
-        double num31 = keynumberd(k, num1, num2, num3);
-        q = Double.toString(num31);
+        int num31 = keynumber(k, num1, num2, num3);
+        q = Integer.toString(num31);
         return q;
     }
 
@@ -175,12 +156,8 @@ public class Main {
         int k = 0;
         int m = 0;
         int l = 0;
-        int num1 = 0;
-        int num2 = 0;
         int num3 = 0;
-        double num11 = 0;
-        double num21 = 0;
-        double num31 = 0;
+        int num31 = 0;
 
         q = q.replaceAll(" ", "");
         int n = q.length();
@@ -222,4 +199,3 @@ public class Main {
         return q;
     }
 }
-
